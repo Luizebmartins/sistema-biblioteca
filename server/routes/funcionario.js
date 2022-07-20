@@ -8,7 +8,7 @@ const router = express.Router()
 router.post('/funcionarios', async (req, res, next) => {
 	const data = req.body
 	try {
-		const novoFunc = await funcionarioService.salvarAssociado(data)
+		const novoFunc = await funcionarioService.salvarExemplar(data)
 		
 		res.status(201).json(novoFunc)
 	} catch (e) {

@@ -5,6 +5,8 @@ const app = express()
 app.use(express.json())
 app.use('/', require('./routes/funcionario'))
 app.use('/', require('./routes/associado'))
+app.use('/', require('./routes/exemplar'))
+
 
 
 

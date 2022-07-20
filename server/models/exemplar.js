@@ -6,10 +6,6 @@ const exemplar = connection.define('exemplar', {
 		type: DataTypes.INTEGER,
 		primaryKey: true,
 	},
-    nro_Exemplar: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
 	isbn: {
 		type: DataTypes.STRING(12),
 		allowNull: false,
