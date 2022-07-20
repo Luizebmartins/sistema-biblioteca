@@ -11,13 +11,13 @@ const reserva = connection.define('reserva', {
         type: DataTypes.STRING(12),
         allowNull: false,
     },
-    codigo_Assoc: {
+    codigo_assoc: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
     data: {
         type: DataTypes.DATE,
-        allowNull: false,
+        defaultValue: DataTypes.NOW,
     },
     status: {
         type: DataTypes.ENUM('Iniciado', 'Avisado', 'Anulado'),
