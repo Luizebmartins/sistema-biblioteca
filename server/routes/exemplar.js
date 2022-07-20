@@ -8,7 +8,7 @@ const router = express.Router()
 router.post('/exemplares', async (req, res, next) => {
 	const data = req.body
 	try {
-		const novoExemp = await exemplarService.salvarExemplar(data)
+		const novoExemp = await exemplarService.salvarPublicacao(data)
 		
 		res.status(201).json(novoExemp)
 	} catch (e) {
