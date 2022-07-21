@@ -26,6 +26,14 @@ router.get('/exemplares/:isbn', async (req, res, next) => {
 	}
 })
 
+router.get('/exemplaresDisponiveis/:isbn', async (req, res, next) => {
+	try {
+		const exemplares = await exemplarService.buscaExemplaresDisponiveis(req.params.isbn)
+		res.status(200).json(exemplares)
+	} catch (e) {
+		console.log(e)
+	}
+})
 
 
 module.exports = router

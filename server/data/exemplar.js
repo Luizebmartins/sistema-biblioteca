@@ -6,5 +6,5 @@ exports.salvarExemplar = function (novoExemp) {
 }
 
 exports.buscaExemplarPorIsbn = function (isbn) {
-	return exemplar.findAll({ where: { isbn } })
+	return exemplar.findAll({ where: { isbn }, raw: true })
 }
