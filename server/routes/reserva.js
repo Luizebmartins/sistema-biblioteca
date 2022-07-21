@@ -16,6 +16,14 @@ router.post('/reservas', async (req, res, next) => {
 	}
 })
 
-
+router.get('/reservas/:isbn', async (req, res, next) => {
+	try {
+		const reservas = await reservaService.buscarReservasPorIsbn(req.params.isbn)
+		
+		res.status(201).json(reservas)
+	} catch (e) {
+		next(e)
+	}
+})
 
 module.exports = router

@@ -7,7 +7,7 @@ const emprestimo = connection.define('emprestimo', {
 		primaryKey: true,
 		autoIncrement: true,
 	},
-    nro_Exemplar: {
+    nro_exemplar: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
@@ -15,15 +15,15 @@ const emprestimo = connection.define('emprestimo', {
 		type: DataTypes.STRING(12),
 		allowNull: false,
 	},
-    codigo_Assoc: {
+    codigo_assoc: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-	data_Emp: {
+	data_emp: {
 		type: DataTypes.DATE,
 		allowNull: false,
 	},
-    data_Devol: {
+    data_devol: {
         type: DataTypes.DATE,
 		allowNull: false,
     }

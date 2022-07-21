@@ -8,6 +8,8 @@ app.use('/', require('./routes/associado'))
 app.use('/', require('./routes/exemplar'))
 app.use('/', require('./routes/publicacao'))
 app.use('/', require('./routes/reserva'))
+app.use('/', require('./routes/emprestimo'))
+
 
 
 
