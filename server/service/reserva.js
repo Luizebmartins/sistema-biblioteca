@@ -17,3 +17,16 @@ exports.salvarReserva = async function (data) {
 exports.buscarReservasPorIsbn = async function (isbn) {
 	return reservaData.buscaReservaPorIsbn(isbn)
 }
+
+exports.anularReserva = async function (data) {
+	const reserva = await reservaData.buscaReservaPorAssociado(data.isbn, data.codigo_assoc)
+
+    if(reserva) {
+        const reservaStatus = {
+            status: "Anulado"
+        }
+        return reservaData.atualizarReserva(reserva.codigo, reservaStatus)
+    }
+
+    throw "Reserva não encontrada"
+}
