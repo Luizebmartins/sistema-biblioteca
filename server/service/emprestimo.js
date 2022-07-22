@@ -33,7 +33,6 @@ exports.salvarEmprestimo = async function (data) {
 	}
 
 
-
 	data.data_emp = moment()
 	if(associado.status === "Grad") {
 		data.data_devol = moment().add(7, 'd');
