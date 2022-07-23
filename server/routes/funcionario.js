@@ -16,7 +16,7 @@ router.post('/funcionarios', async (req, res, next) => {
 	}
 })
 
-router.post('/funcionarios/login', async (req, res, next) => {
+router.post('/funcionarios/login/', async (req, res, next) => {
 	const data = req.body
 	try {
 		const token = await funcionarioService.loginFuncionario(data)
