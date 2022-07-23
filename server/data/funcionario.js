@@ -6,7 +6,7 @@ exports.salvarFuncionario = function (novoFunc) {
 }
 
 exports.buscarFuncionarioPorEmail = function (email) {
-	return funcionario.findOne({ where: {email}})
+	return funcionario.findOne({ where: {email}, raw: true})
 }
 
 

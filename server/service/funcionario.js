@@ -15,13 +15,7 @@ exports.loginFuncionario = async function (data) {
 
 	if (data.senha !== funcionario.senha) throw new Error('Falha no login')
 
-	const token = jwt.sign({
-		codigo: funcionario.codigo,
-		email: funcionario.email,
-		funcao: funcionario.funcao,
-	}, process.env.JWT_KEY, {
-		expiresIn: '1d',
-	})
-
-	return token
+	delete funcionario.senha
+	console.log(funcionario)
+	return funcionario
 }
