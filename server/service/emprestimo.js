@@ -87,7 +87,7 @@ exports.buscarAtrasados = async function () {
 		const now = moment()
 		emprestimos.forEach(emprestimo => {
 			if(now.diff(emprestimo.data_devol, "days") > 0) {
-				atrasados.push({codigo_assoc: emprestimo.codigo_assoc, isbn: emprestimo.isbn})
+				atrasados.push(emprestimo)
 			}
 			
 		})
