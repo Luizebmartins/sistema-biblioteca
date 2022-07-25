@@ -17,6 +17,17 @@ router.post('/publicacoes', async (req, res, next) => {
 	}
 })
 
+router.get('/publicacoes', async (req, res, next) => {
+	try {
+		const publicacoes = await publicacaoService.buscarPublicacoes()
+		
+		res.status(201).json(publicacoes)
+	} catch (e) {
+		res.status(400).send("Publicações não encontradas")
+
+	}
+})
+
 
 
 module.exports = router
