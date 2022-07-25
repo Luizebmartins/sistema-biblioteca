@@ -12,7 +12,7 @@ router.post('/associados', async (req, res, next) => {
 		
 		res.status(201).json(novoAssoc)
 	} catch (e) {
-		next(e)
+		res.status(400)
 	}
 })
 

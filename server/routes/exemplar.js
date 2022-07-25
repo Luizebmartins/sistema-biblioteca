@@ -12,7 +12,7 @@ router.post('/exemplares', async (req, res, next) => {
 		
 		res.status(201).json(novoExemp)
 	} catch (e) {
-		next(e)
+		res.status(400)
 	}
 })
 
@@ -22,7 +22,7 @@ router.get('/exemplares/:isbn', async (req, res, next) => {
 		const exemplares = await exemplarService.buscaExemplares(req.params.isbn)
 		res.status(200).json(exemplares)
 	} catch (e) {
-		next(e)
+		res.status(400)
 	}
 })
 
@@ -31,7 +31,7 @@ router.get('/exemplaresDisponiveis/:isbn', async (req, res, next) => {
 		const exemplares = await exemplarService.buscaExemplaresDisponiveis(req.params.isbn)
 		res.status(200).json(exemplares)
 	} catch (e) {
-		console.log(e)
+		res.status(400)
 	}
 })
 

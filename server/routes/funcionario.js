@@ -12,7 +12,7 @@ router.post('/funcionarios', async (req, res, next) => {
 		
 		res.status(201).json(novoFunc)
 	} catch (e) {
-		next(e)
+		res.status(400)
 	}
 })
 
@@ -22,7 +22,7 @@ router.post('/funcionarios/login/', async (req, res, next) => {
 		const token = await funcionarioService.loginFuncionario(data)
 		res.status(200).json(token)
 	} catch (e) {
-		console.log(e)
+		res.status(400)
 	}
 })
 

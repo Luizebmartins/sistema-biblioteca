@@ -12,7 +12,7 @@ router.post('/emprestimos', async (req, res, next) => {
 		
 		res.status(201).json(novoEmprest)
 	} catch (e) {
-		console.log(e)
+		res.status(400)
 	}
 })
 
@@ -21,7 +21,7 @@ router.post('/devolverExemplar', async (req, res, next) => {
 		const multa = await emprestimoService.devolverExemplar(req.body)
 		res.status(200).json(multa)
 	} catch (e) {
-		console.log(e)
+		res.status(400)
 	}
 })
 
@@ -30,7 +30,7 @@ router.get('/emprestimosAtrasados', async (req, res, next) => {
 		const emprestimosAtrasados = await emprestimoService.buscarAtrasados()
 		res.status(200).json(emprestimosAtrasados)
 	} catch (e) {
-		console.log(e)
+		res.status(400)
 	}
 })
 
