@@ -7,9 +7,8 @@ exports.salvarReserva = async function (data) {
 
     const emprestimos = await emprestimoData.buscarEmprestimos(data.isbn)
     const exemplares = await exemplarData.buscaExemplarPorIsbn(data.isbn)
-    
-    if(emprestimos.length < exemplares.length) throw new Error("Ainda existe exemplar disponível")
 
+    if(emprestimos.length < exemplares.length) throw new Error("Ainda existe exemplar disponível")
 	const novaReserv = data
 	return reservaData.salvarReserva(novaReserv)
 }

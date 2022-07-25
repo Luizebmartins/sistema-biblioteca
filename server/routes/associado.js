@@ -12,10 +12,21 @@ router.post('/associados', async (req, res, next) => {
 		
 		res.status(201).json(novoAssoc)
 	} catch (e) {
-		res.status(400)
+		res.status(400).json({error: e})
+
 	}
 })
 
+router.get('/associados', async (req, res, next) => {
+	try {
+		const associados = await associadoService.consultarAssociados()
+
+		res.status(201).json(associados)
+	} catch (e) {
+		res.status(400).send("Assoaciados não encontrados")
+
+	}
+})
 
 
 module.exports = router

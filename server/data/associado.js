@@ -8,3 +8,7 @@ exports.salvarAssociado = function (novoAssoc) {
 exports.buscarPorCodigo = function (codigo) {
 	return associado.findOne({ where: { codigo }, raw: true })
 }
+
+exports.consultarAssociados = function (codigo) {
+	return associado.findAll({ raw: true })
+}

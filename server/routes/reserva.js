@@ -12,7 +12,8 @@ router.post('/reservas', async (req, res, next) => {
 		
 		res.status(201).json(novaReserv)
 	} catch (e) {
-		res.status(400)
+		res.status(400).json({error: e})
+
 	}
 })
 
@@ -22,7 +23,7 @@ router.get('/reservas/:isbn', async (req, res, next) => {
 		
 		res.status(201).json(reservas)
 	} catch (e) {
-		res.status(400)
+		res.status(400).json({error: e})
 	}
 })
 
@@ -32,7 +33,8 @@ router.put('/anularReserva', async (req, res, next) => {
 		
 		res.status(201).send("reserva anulada")
 	} catch (e) {
-		res.status(400)
+		res.status(400).json({error: e})
+	
 	}
 })
 

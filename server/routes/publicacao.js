@@ -12,7 +12,8 @@ router.post('/publicacoes', async (req, res, next) => {
 		
 		res.status(201).json(novaPublic)
 	} catch (e) {
-		res.status(400)
+		res.status(400).json({error: e})
+
 	}
 })
 
